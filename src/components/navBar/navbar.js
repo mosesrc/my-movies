@@ -8,7 +8,7 @@ class Navbar extends Component {
         {/*navbar content*/}
         <div className='container-fluid'>
           <Link to='/' className='navbar-brand'>
-            Navbar
+            YourFavs
           </Link>
           <button
             className='navbar-toggler'
