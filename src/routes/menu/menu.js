@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Collections from "../../components/collections/collections";
 
 // 📝: Importing Data
@@ -20,15 +21,17 @@ function Menu() {
 
   const renderList = collectionList.map((_, idx) => {
     return (
-      <li className='list-group-item d-flex justify-content-between align-items-start'>
-        <div className='ms-2 me-auto'>
-          <div className='fw-bold'>Collection {idx + 1}</div>
-          {subHeading[idx]}
-        </div>
-        <span className='badge bg-primary rounded-pill'>
-          {data[idx].length}
-        </span>
-      </li>
+      <Link key={idx} to='#'>
+        <li className='list-group-item d-flex justify-content-between align-items-start'>
+          <div className='ms-2 me-auto'>
+            <div className='fw-bold'>Collection {idx + 1}</div>
+            {subHeading[idx]}
+          </div>
+          <span className='badge bg-primary rounded-pill'>
+            {data[idx].length}
+          </span>
+        </li>
+      </Link>
     );
   });
 

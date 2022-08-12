@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import Menu from "./routes/menu/menu";
 import About from "./routes/about/about";
+import Collections from "./components/collections/collections";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -11,7 +12,9 @@ root.render(
   <Router>
     <Routes>
       <Route exact path='/' element={<App />}>
-        <Route path='menu' element={<Menu />} />
+        <Route path='menu' element={<Menu />}>
+          <Route path=':collectionId' element={<Collections />} />
+        </Route>
         <Route path='about' element={<About />} />
       </Route>
     </Routes>
