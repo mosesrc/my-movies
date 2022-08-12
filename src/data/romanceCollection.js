@@ -1,6 +1,10 @@
+import boomerang from "../images/boomerang.jpg";
+import crazyStupidLove from "../images/CrazyStupidLove.jpg";
+import breakinTheRules from "../images/BreakinTheRules.jpg";
+
 export const romanceCollection = [
   {
-    img: "../../public/img/boomerang.jpg",
+    img: boomerang,
     title: "Boomerang",
     description:
       "A successful executive and womanizer finds his lifestyle choices have turned back on him when his new female boss turns out to be an even bigger deviant than he is.",
@@ -10,7 +14,7 @@ export const romanceCollection = [
     duration: "1h 57m",
   },
   {
-    img: "../../public/img/CrazyStupidLove.jpg",
+    img: crazyStupidLove,
     title: "Crazy, Stupid, Love",
     description:
       "A middle-aged husband's life changes dramatically when his wife asks him for a divorce. He seeks to rediscover his manhood with the help of a newfound friend, Jacob, learning to pick up girls at bars.",
@@ -20,7 +24,7 @@ export const romanceCollection = [
     duration: "1h 58m",
   },
   {
-    img: "../../public/img/BreakinTheRules.jpg",
+    img: breakinTheRules,
     title: "Breakin' All The Rules",
     description:
       "Inspired by his fiancée (who dumped him), a man publishes a break-up hand-book for men, becoming a best-selling author in the process.",

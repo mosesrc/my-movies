@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Collections from "./components/collections/collections";
+import Navbar from "./components/navBar/navbar";
+import { actionCollection } from "./data/actionCollection";
+import { comedyCollection } from "./data/comedyCollection";
+import { romanceCollection } from "./data/romanceCollection";
+import { Outlet } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      collectionsData: {
+        actionCollection,
+        romanceCollection,
+        comedyCollection,
+      },
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <Navbar />
+        <Outlet />
+      </div>
+    );
+  }
 }
 
 export default App;
