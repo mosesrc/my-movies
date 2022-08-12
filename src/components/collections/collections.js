@@ -1,8 +1,6 @@
 import Movie from "../movie-card/Movie";
 
 function Collections({ data }) {
-  // useEffect to load data
-
   return (
     <div>
       <Movie actionData={data.actionCollection} />
