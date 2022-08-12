@@ -9,26 +9,40 @@ import { romanceCollection } from "../../data/romanceCollection";
 // Menu component
 
 function Menu() {
-  const obj = {
+  const collectionList = [
     actionCollection,
     comedyCollection,
     romanceCollection,
-  };
+  ];
+  const subHeading = ["Action", "Comedy", "Romance"];
 
-  const [data, setData] = useState(obj);
+  const [data, setData] = useState(collectionList);
+
+  const renderList = collectionList.map((_, idx) => {
+    return (
+      <li className='list-group-item d-flex justify-content-between align-items-start'>
+        <div className='ms-2 me-auto'>
+          <div className='fw-bold'>Collection {idx + 1}</div>
+          {subHeading[idx]}
+        </div>
+        <span className='badge bg-primary rounded-pill'>
+          {data[idx].length}
+        </span>
+      </li>
+    );
+  });
 
   return (
-    <div>
+    <div className='container-fluid'>
       <h1>Menu</h1>
-      <Collections data={data} />
-      <p>
-        Check out our amazing 24/7 menu:
-        <ul>
-          <li>Lazy Loading</li>
-          <li>Dynamic Route Matching</li>
-          <li>Location Transition Handling</li>
-        </ul>
-      </p>
+      <div className='row align-items-start'>
+        <div className='col-3'>
+          <ol className='list-group'>{renderList}</ol>
+        </div>
+        <div className='col'>
+          <Collections data={data} />
+        </div>
+      </div>
     </div>
   );
 }

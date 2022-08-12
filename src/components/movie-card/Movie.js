@@ -1,8 +1,8 @@
 import React from "react";
 import "./Movie.css";
 
-function Movie({ actionData }) {
-  const listItems = actionData.map((item, idx) => {
+function Movie({ movieData }) {
+  const listItems = movieData.map((item, idx) => {
     console.log(item.img);
     return (
       <div key={idx} className='card card-view' style={{ width: "19rem" }}>
